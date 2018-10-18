@@ -1,0 +1,38 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.breeze.dao.UserMapper">
+    <resultMap id="BaseResultMap" type="com.breeze.model.UserModel">
+        <id column="id" property="id" jdbcType="BIGINT" />
+        <result column="name" property="name" jdbcType="VARCHAR" />
+        <result column="age" property="age" jdbcType="INTEGER" />
+        <result column="mobile" property="mobile" jdbcType="VARCHAR" />
+
+    </resultMap>
+
+    <!-- 查询所有 -->
+    <select id="selectList" resultMap="BaseResultMap">
+        select * from userinfo
+    </select>
+
+    <!-- 新增 -->
+    <insert id="saveUser" parameterType="com.breeze.model.UserModel" >
+        insert into userinfo(name,age,mobile) values (#{name},#{age})
+    </insert>
+
+    <!-- 修改 -->
+    <update id="updateUser" parameterType="com.breeze.model.UserModel" >
+        update  userinfo set name=#{name},age=#{age},mobile=#{mobile} where id=#{id}
+    </update>
+
+    <!-- 删除 -->
+    <delete id="deleteUser" parameterType="INTEGER">
+          delete from userinfo where id=#{id}
+    </delete>
+
+    <!-- 根据id查找单个用户 -->
+    <select id="findUserById" parameterType="INTEGER" resultType="com.breeze.model.UserModel">
+         select * from userinfo where id=#{id}
+      </select>
+
+
+</mapper>
