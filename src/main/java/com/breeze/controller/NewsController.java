@@ -20,7 +20,6 @@ public class NewsController {
     public String getAllNews(Model model){
         List<NewsModel> newsModelList=newsService.selectNewsList(0);
         model.addAttribute("newsList",newsModelList);
-
         return "user/news";
     }
 }
