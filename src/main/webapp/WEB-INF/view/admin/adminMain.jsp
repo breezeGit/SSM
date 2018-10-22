@@ -39,7 +39,7 @@
             <div class="nav-wrap">
                 <ul class="nav ue-clear">
                     <li><a href="javascript:;">平台管理</a></li>
-                    <li><a href="javascript:;">数据中心</a></li>
+                    <li><a href="/news/getAllNews">数据中心</a></li>
                     <li><a href="javascript:;">表单管理</a></li>
                     <li><a href="javascript:;">流程管理</a></li>
                     <li><a href="javascript:;">个人设置</a></li>
